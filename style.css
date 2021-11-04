@@ -28,6 +28,9 @@
     width:12rem;
     transition:all .2s;
 }
+.btn, .reset-btn{
+    transform: scale(0.2)
+}
 
 .btn:hover,.reset-btn:hover{
     transform:scale(1.1);
