@@ -61,7 +61,7 @@ function playRound(playerSelection) {
     gameTotal += 1;
   }
 
-  totals.innerHTML = `Player= ${playerScore} Computer= ${compScore} Draw=${drawTotal} Game Total= ${gameTotal}`;
+  totals.innerHTML = `Player= ${playerScore} * Computer= ${compScore} * Draw=${drawTotal} * Game Total= ${gameTotal}`;
   if (gameTotal === 5) {
     disableButtons();
     if (playerScore > compScore) {
