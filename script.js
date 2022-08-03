@@ -14,15 +14,13 @@ function computerPlay() {
   let computerSelection = Math.floor(Math.random() * 3);
   if (computerSelection === 1) {
     computerChoice.textContent = 'Computer draws Rock';
-    return 'rock';
+    return 'rock 🪨';
   } else if (computerSelection === 2) {
     computerChoice.textContent = 'Computer draws Paper';
-
-    return 'paper';
+    return 'paper 📄';
   } else {
     computerChoice.textContent = 'Computer draws Scissors';
-
-    return 'scissors';
+    return 'scissors ✂️';
   }
 }
 
@@ -38,19 +36,23 @@ function resetGame() {
 
 function playRound(playerSelection) {
   const computerSelection = computerPlay();
+  console.log('playerSelection:', playerSelection);
+  console.log('computer:', computerSelection);
+  console.log('playerScore:', playerScore);
+  console.log('results:', results);
 
   if (
-    (playerSelection === 'rock' && computerSelection === 'scissors') ||
-    (playerSelection === 'paper' && computerSelection === 'rock') ||
-    (playerSelection === 'scissors' && computerSelection === 'paper')
+    (playerSelection === 'rock 🪨' && computerSelection === 'scissors ✂️') ||
+    (playerSelection === 'paper 📄' && computerSelection === 'rock 🪨') ||
+    (playerSelection === 'scissors ✂️' && computerSelection === 'paper 📄')
   ) {
     results.innerHTML = `You Win! ${playerSelection} beats ${computerSelection}`;
     playerScore += 1;
     gameTotal += 1;
   } else if (
-    (playerSelection === 'rock' && computerSelection === 'paper') ||
-    (playerSelection === 'paper' && computerSelection === 'scissors') ||
-    (playerSelection === 'scissors' && computerSelection === 'rock')
+    (playerSelection === 'rock 🪨' && computerSelection === 'paper 📄') ||
+    (playerSelection === 'paper 📄' && computerSelection === 'scissors ✂️') ||
+    (playerSelection === 'scissors ✂️' && computerSelection === 'rock 🪨')
   ) {
     results.innerHTML = `You Lose! ${computerSelection} beats ${playerSelection}`;
     compScore += 1;
@@ -66,6 +68,8 @@ function playRound(playerSelection) {
     disableButtons();
     if (playerScore > compScore) {
       results.innerHTML = `You won the game! Reset to play again!`;
+    } else if (playerScore === compScore) {
+      results.innerHTML = 'Tie Game! Reset to play again!';
     } else results.innerHTML = `You lost the game 😦 Reset to play again!`;
   }
 }
