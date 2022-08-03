@@ -36,10 +36,6 @@ function resetGame() {
 
 function playRound(playerSelection) {
   const computerSelection = computerPlay();
-  console.log('playerSelection:', playerSelection);
-  console.log('computer:', computerSelection);
-  console.log('playerScore:', playerScore);
-  console.log('results:', results);
 
   if (
     (playerSelection === 'rock 🪨' && computerSelection === 'scissors ✂️') ||
